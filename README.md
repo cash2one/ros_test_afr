@@ -1,3 +1,3 @@
 # ros_test_afr
 
-just some test code
+a ros node use afr from face++,just test code here.
