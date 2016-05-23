@@ -1,0 +1,5 @@
+rosservice call /nlu '北京明天的天气'
+rosservice call /nlu '请下载周杰伦的歌曲'
+rosservice call /nlu '后天北京到广州的火车'
+rosservice call /nlu '你今天心情好么'
+rosservice call /nlu '宫保鸡丁怎么做'
