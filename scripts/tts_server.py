@@ -7,7 +7,11 @@ from baidu_nlu.srv import *
 import rospy
 
 
-def nlu_test(msg):
+
+
+
+
+def tts_test(msg):
 
     domainIds = ','.join([str(x) for x in xrange(1,30)])
     url = 'http://yuyin.baidu.com/nlp/analysisPreview?domainIds=%s&query=%s'%(domainIds,msg)
@@ -15,16 +19,16 @@ def nlu_test(msg):
 
     return response
 
-def handle_nlu(req):
+def handle_tts(req):
     print 'request is ',req.natural_language_json
 
-    return NLUResponse(nlu_test(req.natural_language_json))
+    return TTSResponse(tts_test(req.natural_language_json))
 
-def nlu_server():
-    rospy.init_node('nlu_server')
-    s = rospy.Service('nlu',NLU,handle_nlu)
-    print 'ready to parse the sentence'
+def tts_server():
+    rospy.init_node('tts_server')
+    s = rospy.Service('tts',TTS,handle_tts)
+    print 'ready to read the sentence'
     rospy.spin()
 
 if __name__ == '__main__':
-    nlu_server()
+    tts_server()
