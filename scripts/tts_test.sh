@@ -1,2 +1,2 @@
-rosservice call /tts '北京明天的天气'
-rosservice call /tts '请下载周杰伦的歌曲'
+rosservice call /tts '你今天心情好么'
+rosservice call /tts '明天打算去哪玩？'
