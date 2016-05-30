@@ -11,7 +11,7 @@ import subprocess
 from baidu_nlu.srv import *
 import rospy
 
-from facepp import API
+from facepp import API,File
 
 '''
 FacePlusPlus Service need to register in http://www.faceplusplus.com
@@ -35,8 +35,13 @@ def get_config():
 
 
 def afr_test(msg):
-
-    return msg
+    subprocess.call('raspistill -o face.jpg -t 300 -w 480 -h 360 ',shell=True)
+    result = api.recognition.recognize(img = File('face.jpg'), group_name = 'ry_robot_001')
+    #print 'result',result
+    if result['face']:
+        return result['face'][0]['candidate'][0]['person_name']
+    else:
+        return 'no person'
 
 def handle_afr(req):
     print 'request is ',req.controller_json
