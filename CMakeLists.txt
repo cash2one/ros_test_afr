@@ -57,6 +57,8 @@ find_package(catkin REQUIRED COMPONENTS
    NLU.srv
    TTS.srv
    ASR.srv
+   AFR.srv
+   CHAT.srv
  )
 
 ## Generate actions in the 'action' folder
