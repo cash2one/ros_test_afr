@@ -55,7 +55,8 @@ def tts_test(msg):
     fw = open('read.mp3','wb')
     fw.write(res)
     fw.close()
-    subprocess.Popen(['mplayer','read.mp3'])
+    #subprocess.Popen(['mplayer','read.mp3'])
+    subprocess.call('mplayer read.mp3',shell=True)
     return msg
 
 def handle_tts(req):
